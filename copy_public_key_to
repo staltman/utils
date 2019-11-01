@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+        echo -e 'Usage:\n\tcopy_public_key_to <where to copy>\nExample:\n\tcopy_public_key_to csapp@10.57.1.1'
+else
+        cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> ~/.ssh/authorized_keys'
+fi
